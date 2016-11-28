@@ -22,29 +22,35 @@ public class TankDrive extends OpMode {
         leftMotor = hardwareMap.dcMotor.get("Motor_2");
         rightMotor = hardwareMap.dcMotor.get("Motor_1");
         spinner = hardwareMap.dcMotor.get("Motor_3");
-        spinnerR = hardwareMap.dcMotor.get("Motor_3");
+
 
         rightMotor.setDirection(DcMotor.Direction.REVERSE);
-        leftMotor.setDirection(DcMotor.Direction.REVERSE);
-        spinner.setDirection(DcMotor.Direction.REVERSE);
+        spinner.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     public void loop() {
 
         float leftY = -gamepad1.left_stick_y;
         float rightY = -gamepad1.right_stick_y;
-        float spinnerF = -gamepad1.right_trigger;
-        float spinnerR = -gamepad1.left_trigger;
+        float spinnerF = gamepad1.right_trigger;
+        float spinnerR = gamepad1.left_trigger;
 
         leftMotor.setPower(leftY);
         rightMotor.setPower(rightY);
         if (gamepad1.right_trigger == 1 ) {
 
+            spinner.setDirection(DcMotorSimple.Direction.REVERSE);
             spinner.setPower(spinnerF);
+
+        } else if (gamepad1.left_trigger == 1) {
+
+            spinner.setDirection(DcMotorSimple.Direction.FORWARD);
+            spinner.setPower(spinnerR);
 
         } else {
 
-            spinner.setPower(spinnerR);
+            spinner.setPower(0);
+
 
         }
 
