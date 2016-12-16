@@ -46,8 +46,6 @@ public class AutoTest extends OpMode{
         leftMotor.setPower(0.25);
         rightMotor.setPower(0.25);
 
-        leftMotor.setPower(0.0);
-        rightMotor.setPower(0.0);
     }
     @Override
     public void loop(){
