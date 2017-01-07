@@ -80,13 +80,13 @@ public class ConceptRegisterOpModes
     // manager.register("Teleop POV",             PushbotTeleopPOV_Linear.class);
     // manager.register("Teleop Tank",            PushbotTeleopTank_Iterative.class);
     // manager.register("Auto Drive Gyro",        PushbotAutoDriveByGyro_Linear.class);
-    // manager.register("Auto Drive Encoder",     PushbotAutoDriveByEncoder_Linear.class);
+    manager.register("Auto Drive Encoder",     PushbotAutoDriveByEncoder_Linear.class);
     // manager.register("Auto Drive Time",        PushbotAutoDriveByTime_Linear.class);
     // manager.register("Auto Drive Line",        PushbotAutoDriveToLine_Linear.class);
     // manager.register("K9 Telop",               K9botTeleopTank_Linear.class);
-
     manager.register("DriveForwardControl", DriveForwardControl.class);
     manager.register("TankDrive", TankDrive.class);
+    manager.register("AutoTest", AutoTest.class);
 
     // Sensor Samples
     // manager.register("AdaFruit IMU",           SensorAdafruitIMU.class);

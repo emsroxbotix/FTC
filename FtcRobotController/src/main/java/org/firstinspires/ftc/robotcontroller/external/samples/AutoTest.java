@@ -30,32 +30,35 @@ public class AutoTest extends OpMode{
         rightMotor = hardwareMap.dcMotor.get("Motor_1");
 
         rightMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftMotor.setDirection(DcMotor.Direction.FORWARD);
+        /*leftMotor.setMode(DcMotor.RunMode.RESET_ENCODERS);
+        rightMotor.setMode(DcMotor.RunMode.RESET_ENCODERS);*/
 
-        leftMotor.setMode(DcMotor.RunMode.RESET_ENCODERS);
-        rightMotor.setMode(DcMotor.RunMode.RESET_ENCODERS);
+
     }
 @Override
     public void start(){
 
-        leftMotor.setTargetPosition((int) COUNTS);
-        rightMotor.setTargetPosition((int) COUNTS);
+        leftMotor.setTargetPosition(2880);
+        rightMotor.setTargetPosition(2880);
 
-        leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            leftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            rightMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        leftMotor.setPower(0.25);
-        rightMotor.setPower(0.25);
+            leftMotor.setPower(0.25);
+            rightMotor.setPower(0.25);
+
 
 
     }
-
+    @Override
     public void loop(){
 
-        telemetry.addData("Motor Target", COUNTS);
+        telemetry.addData("Motor Target", 2880);
         telemetry.addData("Left Position", leftMotor.getCurrentPosition());
         telemetry.addData("Rigt Position", rightMotor.getCurrentPosition());
     }
-
+    @Override
     public void stop(){
 
         leftMotor.setPower(0.0);
