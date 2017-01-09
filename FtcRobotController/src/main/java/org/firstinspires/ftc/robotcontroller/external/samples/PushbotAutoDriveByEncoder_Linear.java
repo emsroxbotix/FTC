@@ -116,13 +116,9 @@ public class PushbotAutoDriveByEncoder_Linear extends LinearOpMode {
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        robot.indexer.setPosition(0.0);
+        cannonShoot();
+        //commenty comment
 
-        sleep(3000);
-
-        distanceSensor();
-
-        sleep(3000);
 
 
 
@@ -130,7 +126,7 @@ public class PushbotAutoDriveByEncoder_Linear extends LinearOpMode {
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
         //cannonShoot();
-        //encoderDrive(DRIVE_SPEED,  -80.1,  -80.1, 30.0);  // S1: Forward 47 Inches with 5 Sec timeout (Negative is forward)
+        encoderDrive(DRIVE_SPEED,  -80.1,  -80.1, 30.0);  // S1: Forward 47 Inches with 5 Sec timeout (Negative is forward)
         //encoderDrive(TURN_SPEED,   12, -12, 4.0);  // S2: Turn Right 12 Inches with 4 Sec timeout
        // encoderDrive(DRIVE_SPEED, -24, -24, 4.0);  // S3: Reverse 24 Inches with 4 Sec timeout
 
@@ -198,13 +194,18 @@ public class PushbotAutoDriveByEncoder_Linear extends LinearOpMode {
         }
     }
 
-    public void distanceSensor() {
+    /* public void distanceSensor() {
 
         double distanceReading = robot.distance.getLightDetected();
 
         telemetry.addData("Distance Sensor", "In the function");
 
-        while (distanceReading <= .5) {
+        // whats up, im a comment
+
+        while  (distanceReading <= 0) {
+
+            telemetry.addData("Distance Sensor", "Less than 8cm");
+            telemetry.update();
 
             if (robot.indexer.getPosition() == 0.0) {
 
@@ -251,53 +252,17 @@ public class PushbotAutoDriveByEncoder_Linear extends LinearOpMode {
             }
 
         }
-        // i like writing comments! i love this one especially!
-        // please don't erase me! i never did anything to you!
-
-        /*if (robot.touch.isPressed()) {
-
-            telemetry.addData("Touch Sensor", "Is pressed");
-
-
-
-            if (robot.indexer.getPosition() == 0.0) {
-
-                robot.indexer.setPosition(1.0);
-
-            } else if (robot.indexer.getPosition() == 1.0) {
-
-                robot.indexer.setPosition(0.0);
-
-            }
-
-        } else {
-
-            telemetry.addData("Touch Sensor", "Is not pressed");
-
-        } */
-
-        telemetry.update();
-    }
-
-    public void IRSeeker() {
-
-        robot.seeker.
 
     }
+    */
+
 
     public void cannonShoot(){
 
         robot.cannon.setPower(1);
         sleep(3000);
         //Open
-        robot.indexer.setPosition(0.0);
-        sleep(10);
-        //Close
-        robot.indexer.setPosition(1.0);
-        sleep(1000);
-        robot.indexer.setPosition(0.0);
-        sleep(10);
-        robot.indexer.setPosition(1.0);
+
     }
 
 }

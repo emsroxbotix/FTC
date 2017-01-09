@@ -32,10 +32,11 @@ public class HardwarePushbot
     public DcMotor  leftMotor   = null;
     public DcMotor  rightMotor  = null;
     public DcMotor  cannon  = null;
-    public Servo    indexer = null;
-    public TouchSensor touch = null;
-    public OpticalDistanceSensor distance = null;
-    public IrSeekerSensor seeker = null;
+    //public Servo    indexer = null;
+    //public TouchSensor touch = null;
+    //public OpticalDistanceSensor distance = null;
+    public DcMotor spinner = null;
+    // hi, im a comment
     public static final double MID_SERVO       =  0.5 ;
     public static final double ARM_UP_POWER    =  0.45 ;
     public static final double ARM_DOWN_POWER  = -0.45 ;
@@ -58,10 +59,13 @@ public class HardwarePushbot
         leftMotor   = hwMap.dcMotor.get("left_drive");
         rightMotor  = hwMap.dcMotor.get("right_drive");
         cannon = hwMap.dcMotor.get("cannon");
-        indexer = hwMap.servo.get("Servo_1");
-        touch = hwMap.touchSensor.get("TouchSensor");
-        distance = hwMap.opticalDistanceSensor.get("OpticalSensor");
-        seeker = hwMap.irSeekerSensor.get("IRSeeker");
+        spinner = hwMap.dcMotor.get("Motor_3");
+
+
+        //indexer = hwMap.servo.get("Servo_1");
+        //touch = hwMap.touchSensor.get("TouchSensor");
+        //distance = hwMap.opticalDistanceSensor.get("OpticalSensor");
+
 
         leftMotor.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         rightMotor.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
