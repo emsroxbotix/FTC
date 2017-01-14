@@ -33,13 +33,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package org.firstinspires.ftc.robotcontroller.external.samples;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DigitalChannel;
-import com.qualcomm.robotcore.hardware.DigitalChannelController;
-import com.qualcomm.robotcore.hardware.TouchSensor;
-import com.qualcomm.robotcore.hardware.usb.RobotUsbDevice;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
@@ -73,7 +68,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous(name="Pushbot: Auto Drive By Encoder", group="Pushbot")
 //@Disabled
-public class PushbotAutoDriveByEncoder_Linear extends LinearOpMode {
+public class CannonShooterOnly extends LinearOpMode {
 
     /* Declare OpMode members. */
 
@@ -127,9 +122,9 @@ public class PushbotAutoDriveByEncoder_Linear extends LinearOpMode {
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
 
 
-        encoderDrive(DRIVE_SPEED,  80.1,  80.1, 30.0);  // S1: Forward 47 Inches with 5 Sec timeout (Negative is forward)
-        encoderDrive(TURN_SPEED,  -30, 30, 4.0);  // S2: Turn Right 12 Inches with 4 Sec timeout
-        encoderDrive(DRIVE_SPEED, 12, 12, 4.0);  // S3: Reverse 24 Inches with 4 Sec timeout
+        //encoderDrive(DRIVE_SPEED,  80.1,  80.1, 30.0);  // S1: Forward 47 Inches with 5 Sec timeout (Negative is forward)
+        //encoderDrive(TURN_SPEED,  -30, 30, 4.0);  // S2: Turn Right 12 Inches with 4 Sec timeout
+        //encoderDrive(DRIVE_SPEED, 12, 12, 4.0);  // S3: Reverse 24 Inches with 4 Sec timeout
 
          // pause for servos to move
 

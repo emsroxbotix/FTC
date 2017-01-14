@@ -34,7 +34,17 @@ public class TankDrive extends OpMode {
         robot.rightMotor.setPower(rightY);
 
         robot.spinner.setPower(spinnerR);
-        robot.cannon.setPower(cannon);
+
+        if (cannon < 0) {
+
+            robot.cannon.setPower(0.5);
+
+        } else {
+
+            robot.cannon.setPower(0);
+
+        }
+
         // hello world! i may or may not be a comment
         // plz dont kill meh
         // plzplzplzplzplzplzplzplzplzplz
